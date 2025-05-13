@@ -1,0 +1,129 @@
+:root {
+    --color-primario: #3498db; /* Azul claro */
+    --color-secundario: #2ecc71; /* Verde brillante */
+    --color-fondo: #f4f4f9; /* Fondo suave */
+    --color-texto: #333; /* Gris oscuro */
+    --color-texto-claro: #fff; /* Blanco */
+    --color-hover: rgba(255, 255, 255, 0.2); /* Hover de botones */
+    --color-acento: #f39c12; /* Color para resaltados */
+    --color-border: #bdc3c7; /* Gris claro */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--color-primario);
+    color: var(--color-texto-claro);
+    padding: 40px 20px;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+nav {
+    display: flex;
+    justify-content: center; /* Centra los botones horizontalmente */
+    gap: 15px;
+    background-color: var(--color-secundario);
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap; /* Hace que los botones se ajusten en líneas si es necesario */
+}
+
+nav button {
+    background: none;
+    border: 2px solid transparent;
+    color: var(--color-texto-claro);
+    font-size: 1.2rem;
+    padding: 12px 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+nav button:hover,
+nav button:focus {
+    background-color: var(--color-hover);
+    border-color: var(--color-acento);
+    color: var(--color-acento);
+}
+
+nav button.active {
+    background-color: var(--color-acento);
+    color: var(--color-texto-claro);
+}
+
+section {
+    display: none;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 40px auto;
+    background-color: var(--color-texto-claro);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease-in-out;
+}
+
+section h2 {
+    font-size: 2rem;
+    color: var(--color-primario);
+    margin-bottom: 20px;
+}
+
+section p, section ul {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color-texto);
+}
+
+section ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+.active {
+    display: block;
+    opacity: 1;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+    header {
+        font-size: 2rem;
+    }
+
+    nav button {
+        font-size: 1rem;
+        padding: 10px 15px;
+    }
+
+    section {
+        padding: 15px;
+    }
+
+    /* Aquí también se ajustan los estilos cuando la pantalla es pequeña */
+    nav {
+        flex-direction: column; /* Los botones de navegación se apilan verticalmente */
+        gap: 10px;
+    }
+}
