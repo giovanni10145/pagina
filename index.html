@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los Colores</title>
+    <link rel="stylesheet" href="/css/1.css">
+    <script>
+        function mostrarSeccion(id, boton) {
+            // Ocultar todas las secciones
+            document.querySelectorAll('section').forEach(section => section.classList.remove('active'));
+            
+            // Mostrar la sección seleccionada
+            document.getElementById(id).classList.add('active');
+
+            // Remover la clase 'active' de todos los botones
+            document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
+
+            // Agregar la clase 'active' al botón seleccionado
+            boton.classList.add('active');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Los Colores</h1>
+        <p>Explora el fascinante mundo del color y su impacto en el diseño</p>
+    </header>
+    
+    <nav>
+        <button onclick="mostrarSeccion('inicio', this)">Inicio</button>
+        <button onclick="mostrarSeccion('teoria', this)">Teoría del Color</button>
+        <button onclick="mostrarSeccion('psicologia', this)">Psicología del Color</button>
+        <button onclick="mostrarSeccion('rgb', this)">RGB, CMYK y HEX</button>
+    </nav>
+    
+    <section id="inicio" class="active">
+        <h2>Bienvenido</h2>
+        <p>El color tiene un papel fundamental en el diseño, la percepción humana y las emociones. A lo largo de esta página exploraremos cómo los colores afectan nuestras decisiones y cómo podemos usarlos de manera efectiva.</p>
+    </section>
+    
+    <section id="teoria">
+        <h2>Teoría del Color</h2>
+        <p>La teoría del color se basa en el círculo cromático y estudia cómo los colores interactúan entre sí. Los colores primarios, secundarios y terciarios son la base para crear una amplia gama de tonos. Comprender estos principios es esencial para diseñadores y artistas.</p>
+        <p><strong>Colores primarios:</strong> Rojo, Azul y Amarillo. Estos colores no se pueden obtener al mezclar otros.</p>
+        <p><strong>Colores secundarios:</strong> Naranja, Verde y Violeta. Se obtienen mezclando dos colores primarios.</p>
+        <p><strong>Colores terciarios:</strong> Son combinaciones de un color primario y uno secundario adyacente.</p>
+    </section>
+    
+    <section id="psicologia">
+        <h2>Psicología del Color</h2>
+        <p>Los colores no solo afectan nuestra percepción estética, sino que también tienen un gran impacto psicológico. Los colores pueden evocar emociones y cambiar la forma en que nos sentimos o nos comportamos. Algunos ejemplos incluyen:</p>
+        <ul>
+            <li><strong>Rojo:</strong> Energía, pasión y urgencia.</li>
+            <li><strong>Azul:</strong> Tranquilidad, confianza y serenidad.</li>
+            <li><strong>Verde:</strong> Salud, naturaleza y frescura.</li>
+            <li><strong>Amarillo:</strong> Felicidad, optimismo y creatividad.</li>
+            <li><strong>Negro:</strong> Elegancia, sofisticación y misterio.</li>
+        </ul>
+    </section>
+    
+    <section id="rgb">
+        <h2>RGB, CMYK y HEX</h2>
+        <p>Existen diferentes modelos para representar los colores en la web y la impresión. Cada modelo tiene su propia manera de mezclar los colores para crear una gama visualmente atractiva:</p>
+        <ul>
+            <li><strong>RGB (Red, Green, Blue):</strong> Este modelo se usa en pantallas y se basa en la mezcla de rojo, verde y azul para formar colores.</li>
+            <li><strong>CMYK (Cyan, Magenta, Yellow, Key/Black):</strong> Este modelo se usa para la impresión y mezcla cian, magenta, amarillo y negro.</li>
+            <li><strong>HEX:</strong> Es un código de 6 caracteres que representa un color. Ejemplo: #FF5733.</li>
+        </ul>
+    </section>
+</body>
+</html>
